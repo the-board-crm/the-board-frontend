@@ -1,17 +1,17 @@
-import { Link } from "react-router-dom";
-import { useContext } from "react";
-
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
- 
-
   return (
     <nav>
-      <Link to="/">
+      <NavLink to="/">
         <button>Home</button>
-      </Link>
-
-      
+      </NavLink>
+      <NavLink to="/login">
+        <button>Login</button>
+      </NavLink>
+      <NavLink to="/signup">
+        <button>Sign Up</button>
+      </NavLink>
     </nav>
   );
 }

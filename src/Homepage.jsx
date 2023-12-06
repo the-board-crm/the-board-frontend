@@ -1,6 +1,5 @@
 function HomePage() {
 
-    console.log('object');
     return (
       <div>
         <h1>here is the homepage</h1>
