@@ -1,8 +1,9 @@
 import { NavLink } from "react-router-dom";
+import '../css/Navbar.css'
 
 function Navbar() {
   return (
-    <nav>
+    <nav className="navbar">
       <NavLink to="/">
         <button>Home</button>
       </NavLink>
