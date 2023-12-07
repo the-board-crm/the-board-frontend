@@ -38,7 +38,7 @@ function CompanyDetails() {
       CompanyEmail: companyDetails.CompanyEmail,
       CompanyPhone: companyDetails.CompanyPhone,
       CompanyAddress: companyDetails.CompanyAdress,
-      CompanyDescription: companyDetails.CompanyDescription,
+      CompanyDescription: companyDetails.CompanyDescription
     };
 
     axios
