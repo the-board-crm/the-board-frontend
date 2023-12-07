@@ -37,7 +37,7 @@ function CompanyDetails() {
       CompanyName: companyDetails.CompanyName,
       CompanyEmail: companyDetails.CompanyEmail,
       CompanyPhone: companyDetails.CompanyPhone,
-      CompanyAddress: companyDetails.CompanyAdress,
+      CompanyAddress: companyDetails.CompanyAddress,
       CompanyDescription: companyDetails.CompanyDescription,
     };
 
