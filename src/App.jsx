@@ -1,11 +1,13 @@
 import React from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./Navbar";
-import HomePage from "./Homepage";
+import Navbar from "./components/Navbar";
+import HomePage from "./pages/Homepage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
-import IsPublic from "./isPublic";                   // to be implemented when it works
+import IsPublic from "./components/isPublic";                   // to be implemented when it works
+import AddCompany from "./pages/AddCompany";
+
 
 
 function App() {
@@ -17,6 +19,7 @@ function App() {
           path="/" element={ <HomePage />} />
         <Route path="/login" element={ <LoginPage /> } />
         <Route path="/signup" element={<SignupPage /> } />
+        <Route path='/companies/create' element={<AddCompany />} />
       </Routes>
     </div>
   );

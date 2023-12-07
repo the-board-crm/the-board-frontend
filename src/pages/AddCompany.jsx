@@ -1,9 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
+import { useContext } from "react";
 
 const API_URL = "http://localhost:5005";
 
-function addCompany(props) {
+function AddCompany(props) {
   const [contactFirstName, setContactFirstName] = useState("");
   const [contactLastName, setContactLastName] = useState("");
   const [companyName, setCompanyName] = useState("");
@@ -24,12 +25,10 @@ function addCompany(props) {
       companyDescription,
     };
 
-    const storedToken = localStorage.getItem("authToken");
+    // const storedToken = localStorage.getItem("authToken");
 
     axios
-      .post(`${API_URL}/api/companies`, requestBody, {
-        headers: { Authorization: `Bearer ${storedToken}` },
-      })
+      .post(`${API_URL}/api/companies`, requestBody)
       .then((response) => {
         setContactFirstName("");
         setContactLastName("");
@@ -103,4 +102,4 @@ function addCompany(props) {
   );
 }
 
-export default addCompany;
+export default AddCompany;

@@ -12,6 +12,9 @@ function Navbar() {
       <NavLink to="/signup">
         <button>Sign Up</button>
       </NavLink>
+      <NavLink to="/companies/create">
+        <button>Create a Company</button>
+      </NavLink>
     </nav>
   );
 }
