@@ -10,7 +10,7 @@ function AddCompany(props) {
   const [companyName, setCompanyName] = useState("");
   const [companyEmail, setCompanyEmail] = useState("");
   const [companyPhone, setCompanyPhone] = useState("");
-  const [companyAdress, setCompanyAdress] = useState("");
+  const [companyAddress, setCompanyAddress] = useState("");
   const [companyDescription, setCompanyDescription] = useState("");
 
   const handleSubmit = (e) => {
@@ -21,7 +21,7 @@ function AddCompany(props) {
       companyName,
       companyEmail,
       companyPhone,
-      companyAdress,
+      companyAddress,
       companyDescription,
     };
 
@@ -35,7 +35,7 @@ function AddCompany(props) {
         setCompanyName("");
         setCompanyEmail("");
         setCompanyPhone("");
-        setCompanyAdress("");
+        setCompanyAddress("");
         setCompanyDescription("");
         props.refreshCompanies();
       })
@@ -86,7 +86,7 @@ function AddCompany(props) {
           type="text"
           name="Company Adress"
           value={companyAdress}
-          onChange={(e) => setCompanyAdress(e.target.value)}
+          onChange={(e) => setCompanyAddress(e.target.value)}
         />
         <label>Company Description:</label>
         <textarea
