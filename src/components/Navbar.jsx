@@ -1,8 +1,9 @@
 import { NavLink } from "react-router-dom";
+import '../css/Navbar.css'
 
 function Navbar() {
   return (
-    <nav>
+    <nav className="navbar">
       <NavLink to="/">
         <button>Home</button>
       </NavLink>
@@ -14,6 +15,9 @@ function Navbar() {
       </NavLink>
       <NavLink to="/companies/create">
         <button>Create a Company</button>
+      </NavLink>
+      <NavLink to="/companies">
+        <button>List of Companies</button>
       </NavLink>
     </nav>
   );

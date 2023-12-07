@@ -25,7 +25,7 @@ function AddCompany(props) {
       companyDescription,
     };
 
-    // const storedToken = localStorage.getItem("authToken");
+    const storedToken = localStorage.getItem("authToken");
 
     axios
       .post(`${API_URL}/api/companies`, requestBody)
@@ -85,7 +85,7 @@ function AddCompany(props) {
         <input
           type="text"
           name="Company Adress"
-          value={companyAdress}
+          value={companyAddress}
           onChange={(e) => setCompanyAddress(e.target.value)}
         />
         <label>Company Description:</label>
