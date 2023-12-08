@@ -68,3 +68,5 @@ function addTask(props) {
     </div>
   );
 }
+
+export default addTask;

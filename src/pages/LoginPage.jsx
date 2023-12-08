@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
+import "../css/LoginPage.css"
 
 const API_URL = "http://localhost:5005";
 
@@ -36,20 +37,22 @@ function LoginPage(props) {
     }
     return(
         <div className="LoginPage">
+          <div className="background-image">Background image</div>
+          <div className="login-form"></div>
       <h1>Login</h1>
 
       <form onSubmit={handleLoginSubmit}>
-        <label>Email:</label>
+        <label>Email:  </label>
         <input type="email" name="email" value={email} onChange={handleEmail} />
-
-        <label>Password:</label>
+<br />
+        <label>Password:  </label>
         <input
           type="password"
           name="password"
           value={password}
           onChange={handlePassword}
         />
-
+<br />
         <button type="submit">Login</button>
       </form>
 
