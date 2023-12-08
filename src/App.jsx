@@ -33,14 +33,14 @@ function App() {
 }
 
 function PrivateRoute({ component }) {
-  const { isAuthenticated, isLoading } = React.useContext(AuthContext);
+  const { isLoggedIn, isLoading } = React.useContext(AuthContext);
 
   if (isLoading) {
     
     return <div>Loading...</div>;
   }
 
-  return isAuthenticated ? component : <Navigate to="/login" />;
+  return isLoggedIn ? component : <Navigate to="/login" />;
 }
 
 export default App;

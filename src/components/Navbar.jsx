@@ -4,7 +4,7 @@ import '../css/Navbar.css';
 import { AuthContext } from "../context/auth.context";
 
 function Navbar() {
-  const { isAuthenticated } = React.useContext(AuthContext);
+  const { isLoggedIn } = React.useContext(AuthContext);
 
   return (
     <nav className="navbar">
@@ -12,7 +12,7 @@ function Navbar() {
         <button>Home</button>
       </NavLink>
       
-      {isAuthenticated ? (
+      {isLoggedIn ? (
         <>
           <NavLink to="/companies/create">
             <button>Create a Company</button>
