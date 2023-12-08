@@ -6,7 +6,7 @@ function CompanyList() {
 
   useEffect(() => {
     axios
-      .get(import.meta.env.VITE_API_URL)
+      .get(import.meta.env.VITE_API_URL + '/api/companies')
       .then((response) => {
         setCompanies(response.data);
       })

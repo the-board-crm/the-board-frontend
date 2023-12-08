@@ -10,7 +10,7 @@ function CompanyDetails() {
 
   useEffect(() => {
     axios
-      .get(import.meta.env.VITE_API_URL + `/${id}`)
+      .get(import.meta.env.VITE_API_URL + '/api/companies'+ `/${id}`)
       .then((response) => {
         setCompanyDetails(response.data);
       })
@@ -21,7 +21,7 @@ function CompanyDetails() {
 
   const deleteFunction = () => {
     axios
-      .delete(import.meta.env.VITE_API_URL + `/${id}`)
+      .delete(import.meta.env.VITE_API_URL + '/api/companies' `/${id}`)
       .then(() => {
         navigate("/companies");
       })
@@ -42,7 +42,7 @@ function CompanyDetails() {
     };
 
     axios
-      .put(import.meta.env.VITE_API_URL + `/${id}`, updatedData)
+      .put(import.meta.env.VITE_API_URL + '/api/companies' + `/${id}`, updatedData)
       .then((response) => {
         console.log("company details updated", response.data);
       })
