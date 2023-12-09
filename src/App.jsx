@@ -1,5 +1,5 @@
 import React from "react";
-import './css/App.css'
+import "./css/App.css";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/Homepage";
@@ -9,8 +9,6 @@ import AddCompany from "./pages/AddCompany";
 import { AuthProviderWrapper, AuthContext } from "./context/auth.context";
 import { Navigate } from "react-router-dom";
 import CompanyList from "./pages/CompanyList";
- 
-
 
 function App() {
   return (
@@ -18,10 +16,7 @@ function App() {
       <div>
         <Navbar />
         <Routes>
-          <Route
-            path="/"
-            element={<PrivateRoute component={<HomePage />} />}
-          />
+          <Route path="/" element={<PrivateRoute component={<HomePage />} />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/companies/create" element={<AddCompany />} />
@@ -34,9 +29,11 @@ function App() {
 
 function PrivateRoute({ component }) {
   const { isLoggedIn, isLoading } = React.useContext(AuthContext);
+  if (!isLoggedIn) {
+    return <Navigate to="/" />;
+  }
 
   if (isLoading) {
-    
     return <div>Loading...</div>;
   }
 

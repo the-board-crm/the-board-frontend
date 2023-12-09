@@ -50,6 +50,8 @@ function AuthProviderWrapper(props) {
 
   useEffect(() => {
     authenticateUser();
+    console.log("isLoggenIn:", isLoggedIn)
+    console.log("user:", user)
   }, []);
 
   return (

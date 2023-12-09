@@ -12,6 +12,14 @@ function Navbar() {
 
   const navigate = useNavigate()
 
+  const handleLogout = () => {
+    logOutUser();
+    navigate('/login');
+  }
+  if (!isLoggedIn){
+    return null;
+  }
+
   return (
     <nav className="navbar">
       <NavLink to="/">
@@ -26,7 +34,7 @@ function Navbar() {
           <NavLink to="/companies">
             <button>List of Companies</button>
           </NavLink>
-          <button onClick={logOutUser} >Log Out</button>
+          <button onClick={handleLogout} >Log Out</button>
         </>
       ) : (
         <>

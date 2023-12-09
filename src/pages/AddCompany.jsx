@@ -45,7 +45,7 @@ function AddCompany(props) {
   return (
     <div className="AddCompany">
       <h3>Add Company</h3>
-      <form on onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <label>Contact First Name:</label>
         <input
           type="text"
@@ -81,10 +81,10 @@ function AddCompany(props) {
           value={companyPhone}
           onChange={(e) => setCompanyPhone(e.target.value)}
         />
-        <label>Company Adress:</label>
+        <label>Company Address:</label>
         <input
           type="text"
-          name="Company Adress"
+          name="Company Address"
           value={companyAddress}
           onChange={(e) => setCompanyAddress(e.target.value)}
         />
