@@ -36,11 +36,14 @@ function LoginPage(props) {
             });
     }
     return(
-        <div className="LoginPage">
-          <div className="background-image">Background image</div>
-          <div className="login-form"></div>
+      <div className="LoginPage">
+        <div className="background-image">
+         <p> The Board CRM <br /> Bee creative with Customer Relationship Management </p>
+        </div>
+         <div className="login-form">
+          <div className="logo"></div>
       <h1>Login</h1>
-
+<br />
       <form onSubmit={handleLoginSubmit}>
         <label>Email:  </label>
         <input type="email" name="email" value={email} onChange={handleEmail} />
@@ -62,6 +65,7 @@ function LoginPage(props) {
 
       <p>Don't have an account?</p>
       <Link to={"/signup"}>Sign Up</Link>
+      </div>
     </div>
   );
 }
