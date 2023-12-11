@@ -24,7 +24,7 @@ function AddCompany(props) {
       companyAddress,
       companyDescription,
     };
-
+    console.log('Request Body:', requestBody)
     const storedToken = localStorage.getItem("authToken");
 
     axios
