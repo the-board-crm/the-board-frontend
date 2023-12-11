@@ -7,7 +7,7 @@ function addTask(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [dueDate, setDueDate] = useState("");
-  const [completed, setCompleted] = useState("");
+  const [completed, setCompleted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,7 +27,7 @@ function addTask(props) {
         setDueDate("");
         setCompleted("");
 
-        props.refreshCompany();
+        // props.refreshCompany();
       })
       .catch((error) => console.log(error));
   };
