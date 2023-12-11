@@ -10,6 +10,9 @@ import { AuthProviderWrapper, AuthContext } from "./context/auth.context";
 import { Navigate } from "react-router-dom";
 import CompanyList from "./pages/CompanyList";
 import CompanyDetails from "./pages/CompanyDetails";
+import IsAnon from "./components/IsAnon";
+import IsPrivate from "./components/isPrivate";
+import AddTask from "./components/AddTask";
 
 function App() {
   return (
@@ -17,29 +20,17 @@ function App() {
       <div>
         <Navbar />
         <Routes>
-          <Route path="/" element={<PrivateRoute component={<HomePage />} />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/" element={<IsAnon><LoginPage /></IsAnon>} />
+          <Route path="/dashboard" element={<IsPrivate><HomePage /></IsPrivate>}/>
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/companies/create" element={<AddCompany />} />
           <Route path="/companies" element={<CompanyList />} />
           <Route path="/api/companies/:id" element={<CompanyDetails />} />
+          <Route path="/tasks" element={<AddTask />} />
         </Routes>
       </div>
     </AuthProviderWrapper>
   );
-}
-
-function PrivateRoute({ component }) {
-  const { isLoggedIn, isLoading } = React.useContext(AuthContext);
-  if (!isLoggedIn) {
-    return <Navigate to="/" />;
-  }
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  return isLoggedIn ? component : <Navigate to="/login" />;
 }
 
 export default App;
