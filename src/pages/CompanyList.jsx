@@ -22,13 +22,13 @@ function CompanyList() {
     <div>
       {companies.map((company) => (
         <div key={company._id}>
-          <h1>{company.ContactFirstName}</h1>
-          <p>{company.ContactLastName}</p>
-          <p>{company.CompanyName}</p>
-          <p>{company.CompanyEmail}</p>
-          <p>{company.CompanyPhone}</p>
-          <p>{company.CompanyAddress}</p>
-          <p>{company.CompanyDescription}</p>
+          <h1>{company.contactFirstName}</h1>
+          <p>{company.contactLastName}</p>
+          <p>{company.companyName}</p>
+          <p>{company.companyEmail}</p>
+          <p>{company.companyPhone}</p>
+          <p>{company.companyAddress}</p>
+          <p>{company.companyDescription}</p>
           <Link to={`/api/companies/${company._id}`}> <button>details</button></Link>
 
         </div>

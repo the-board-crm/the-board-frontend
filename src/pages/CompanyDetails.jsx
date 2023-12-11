@@ -7,11 +7,11 @@ function CompanyDetails() {
   const [companyDetails, setCompanyDetails] = useState({
     ContactFirstName: "",
     ContactLastName: "",
-    CompanyName: "",
-    CompanyEmail: "",
-    CompanyPhone: "",
-    CompanyAddress: "",
-    CompanyDescription: "",
+    companyName: "",
+    companyEmail: "",
+    companyPhone: "",
+    companyAddress: "",
+    companyDescription: "",
   });
 
   const { id } = useParams();
@@ -41,13 +41,13 @@ function CompanyDetails() {
 
   const editSubmit = () => {
     const updatedData = {
-      ContactFirstName: companyDetails.ContactFirstName,
-      ContactLastName: companyDetails.ContactLastName,
-      CompanyName: companyDetails.CompanyName,
-      CompanyEmail: companyDetails.CompanyEmail,
-      CompanyPhone: companyDetails.CompanyPhone,
-      CompanyAddress: companyDetails.CompanyAddress,
-      CompanyDescription: companyDetails.CompanyDescription,
+      ContactFirstName: companyDetails.contactFirstName,
+      ContactLastName: companyDetails.contactLastName,
+      companyName: companyDetails.companyName,
+      companyEmail: companyDetails.companyEmail,
+      companyPhone: companyDetails.companyPhone,
+      companyAddress: companyDetails.companyAddress,
+      companyDescription: companyDetails.companyDescription,
     };
 
     axios
@@ -95,11 +95,11 @@ function CompanyDetails() {
       <hr />
 
       <label>
-        Company Name:
+        company Name:
         <input
           type="text"
-          name="CompanyName"
-          value={companyDetails.CompanyName}
+          name="companyName"
+          value={companyDetails.companyName}
           onChange={(e) =>
             setCompanyDetails((prev) => ({
               ...prev,
@@ -111,11 +111,11 @@ function CompanyDetails() {
       <hr />
 
       <label>
-        Company Email:
+        company Email:
         <input
           type="text"
-          name="CompanyEmail"
-          value={companyDetails.CompanyEmail}
+          name="companyEmail"
+          value={companyDetails.companyEmail}
           onChange={(e) =>
             setCompanyDetails((prev) => ({
               ...prev,
@@ -127,11 +127,11 @@ function CompanyDetails() {
       <hr />
 
       <label>
-        Company Phone:
+        company Phone:
         <input
           type="number"
-          name="CompanyPhone"
-          value={companyDetails.CompanyPhone}
+          name="companyPhone"
+          value={companyDetails.companyPhone}
           onChange={(e) =>
             setCompanyDetails((prev) => ({
               ...prev,
@@ -143,10 +143,10 @@ function CompanyDetails() {
       <hr />
 
       <label>
-        Company Address:
+        company Address:
         <textarea
-          name="CompanyAddress"
-          value={companyDetails.CompanyAddress}
+          name="companyAddress"
+          value={companyDetails.companyAddress}
           onChange={(e) =>
             setCompanyDetails((prev) => ({
               ...prev,
@@ -158,10 +158,10 @@ function CompanyDetails() {
       <hr />
 
       <label>
-        Company Description:
+        company Description:
         <textarea
-          name="CompanyDescription"
-          value={companyDetails.CompanyDescription}
+          name="companyDescription"
+          value={companyDetails.companyDescription}
           onChange={(e) =>
             setCompanyDetails((prev) => ({
               ...prev,

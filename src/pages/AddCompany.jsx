@@ -37,7 +37,6 @@ function AddCompany(props) {
         setCompanyPhone("");
         setCompanyAddress("");
         setCompanyDescription("");
-        props.refreshCompanies();
       })
       .catch((error) => console.log(error));
   };
