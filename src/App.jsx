@@ -9,6 +9,7 @@ import AddCompany from "./pages/AddCompany";
 import { AuthProviderWrapper, AuthContext } from "./context/auth.context";
 import { Navigate } from "react-router-dom";
 import CompanyList from "./pages/CompanyList";
+import CompanyDetails from "./pages/CompanyDetails";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/companies/create" element={<AddCompany />} />
           <Route path="/companies" element={<CompanyList />} />
+          <Route path="/api/companies/:id" element={<CompanyDetails />} />
         </Routes>
       </div>
     </AuthProviderWrapper>

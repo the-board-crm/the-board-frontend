@@ -4,7 +4,16 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function CompanyDetails() {
-  const [companyDetails, setCompanyDetails] = useState([]);
+  const [companyDetails, setCompanyDetails] = useState({
+    ContactFirstName: "",
+    ContactLastName: "",
+    CompanyName: "",
+    CompanyEmail: "",
+    CompanyPhone: "",
+    CompanyAddress: "",
+    CompanyDescription: "",
+  });
+
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -21,7 +30,7 @@ function CompanyDetails() {
 
   const deleteFunction = () => {
     axios
-      .delete(import.meta.env.VITE_API_URL + '/api/companies' `/${id}`)
+      .delete(import.meta.env.VITE_API_URL + '/api/companies' + `/${id}`)
       .then(() => {
         navigate("/companies");
       })

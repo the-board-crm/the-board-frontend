@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+
+const API_URL = "http://localhost:5005";
 
 function CompanyList() {
   const [companies, setCompanies] = useState([]);
@@ -24,8 +27,10 @@ function CompanyList() {
           <p>{company.CompanyName}</p>
           <p>{company.CompanyEmail}</p>
           <p>{company.CompanyPhone}</p>
-          <p>{company.Address}</p>
-          <p>{company.Description}</p>
+          <p>{company.CompanyAddress}</p>
+          <p>{company.CompanyDescription}</p>
+          <Link to={`/api/companies/${company._id}`}> <button>details</button></Link>
+
         </div>
       ))}
     </div>
