@@ -64,6 +64,7 @@ function addTask(props) {
             checked={completed}
             onChange={(e) => setCompleted(e.target.checked)}
         />
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
