@@ -34,6 +34,9 @@ function Navbar() {
           <NavLink to="/companies">
             <button>List of Companies</button>
           </NavLink>
+          <NavLink to="/calendar">
+            <button>Calendar</button>
+          </NavLink>
           <NavLink to="/tasks">
             <button>Add Task</button>
           </NavLink>

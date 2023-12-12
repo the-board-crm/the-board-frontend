@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 
 
-function addTask(props) {
+function addTask({selectedDate, onTaskAdded}) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [dueDate, setDueDate] = useState("");
@@ -21,6 +21,7 @@ function addTask(props) {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
+        onTaskAdded(response.data)
         setTitle("");
         setDescription("");
         setDueDate("");

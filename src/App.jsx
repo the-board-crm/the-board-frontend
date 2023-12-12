@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./css/App.css";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -15,7 +15,13 @@ import IsPrivate from "./components/isPrivate";
 import AddTask from "./components/AddTask";
 import EditCompany from "./pages/EditCompany";
 import MyCalendar from "./components/Calendar";
+
+
 function App() {
+ const [tasks, setTasks] = useState([]);
+ const handleAddTask = (updatedTasks) => {
+  setTasks(updatedTasks);
+ }
   return (
     <AuthProviderWrapper>
       <div>
@@ -24,11 +30,13 @@ function App() {
           <Route path="/" element={<IsAnon><LoginPage /></IsAnon>} />
           <Route path="/dashboard" element={<IsPrivate><HomePage /></IsPrivate>}/>
           <Route path="/signup" element={<SignupPage />} />
-          <Route path="/companies/create" element={<AddCompany />} />
-          <Route path="/companies" element={<CompanyList />} />
-          <Route path="/api/companies/:id" element={<CompanyDetails />} />
-          <Route path="/editcompany/:id" element={<EditCompany />} />
-          <Route path="/tasks" element={<AddTask />} />
+          <Route path="/companies/create" element={<IsPrivate><AddCompany /></IsPrivate>} />
+          <Route path="/companies" element={<IsPrivate><CompanyList /></IsPrivate>} />
+          <Route path="/api/companies/:id" element={<IsPrivate><CompanyDetails /></IsPrivate>} />
+          <Route path="/editcompany/:id" element={<IsPrivate><EditCompany /></IsPrivate>} />
+          <Route path="/tasks" element={<IsPrivate><AddTask /></IsPrivate>} />
+          <Route path="/calendar" element={<IsPrivate><MyCalendar events={tasks} onAddTask={handleAddTask} /></IsPrivate>}
+          />
         </Routes>
       </div>
     </AuthProviderWrapper>
