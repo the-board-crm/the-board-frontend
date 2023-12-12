@@ -14,7 +14,7 @@ import IsAnon from "./components/IsAnon";
 import IsPrivate from "./components/isPrivate";
 import AddTask from "./components/AddTask";
 import EditCompany from "./pages/EditCompany";
-
+import MyCalendar from "./components/Calendar";
 function App() {
   return (
     <AuthProviderWrapper>
