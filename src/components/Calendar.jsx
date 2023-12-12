@@ -15,6 +15,7 @@ const MyCalendar = ({ events, onSelectEvent, onAddTask }) => {
     }
 
     const handleTaskAdded = (task) => {
+        console.log("Task added in MyCalendar:", task);
         const updatedEvents = [...events, task];
         onSelectEvent(task);
         onAddTask(updatedEvents);
@@ -25,8 +26,8 @@ const MyCalendar = ({ events, onSelectEvent, onAddTask }) => {
       <Calendar
         localizer={localizer}
         events={events}
-        startAccessor="start"
-        endAccessor="end"
+        startAccessor="dueDate"
+        endAccessor="dueDate"
         style={{ height: 500 }}
         onSelectEvent={onSelectEvent}
         onSelectSlot={handleSelectSlot}

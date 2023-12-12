@@ -22,7 +22,7 @@ function TaskList() {
         <div key={task._id}>
           <h1>{task.title}</h1>
           <p>{task.description}</p>
-          <p>{task.dueDate}</p>
+          <p>Due date: {task.dueDate}</p>
           <p>{task.completed}</p>
           <p>{task.contact}</p>
           <p>{task.createdAt}</p>
