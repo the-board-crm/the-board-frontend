@@ -23,7 +23,7 @@ function SignupPage(props) {
         console.log(requestBody);
         axios.post(`${import.meta.env.VITE_API_URL}/auth/signup`, requestBody)
             .then((response) => {
-                navigate("/login");
+                navigate("/");
             })
             .catch((error) => {
               console.log(error)
