@@ -15,6 +15,7 @@ import IsPrivate from "./components/isPrivate";
 import AddTask from "./components/AddTask";
 import EditCompany from "./pages/EditCompany";
 import MyCalendar from "./components/Calendar";
+import TaskList from "./pages/TaskList";
 
 
 function App() {
@@ -37,6 +38,8 @@ function App() {
           <Route path="/tasks" element={<IsPrivate><AddTask /></IsPrivate>} />
           <Route path="/calendar" element={<IsPrivate><MyCalendar events={tasks} onAddTask={handleAddTask} /></IsPrivate>}
           />
+          <Route path="/tasks" element={<IsPrivate><TaskList /></IsPrivate>} />
+          <Route path="/tasks/create" element={<IsPrivate><AddTask /></IsPrivate>} />
         </Routes>
       </div>
     </AuthProviderWrapper>
