@@ -34,7 +34,7 @@ function Navbar() {
           <NavLink to="/companies">
             <button>List of Companies</button>
           </NavLink>
-          <NavLink to="/Tasks">
+          <NavLink to="/tasks">
             <button>Add Task</button>
           </NavLink>
           <button onClick={handleLogout} >Log Out</button>

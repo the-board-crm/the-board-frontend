@@ -13,6 +13,7 @@ import CompanyDetails from "./pages/CompanyDetails";
 import IsAnon from "./components/IsAnon";
 import IsPrivate from "./components/isPrivate";
 import AddTask from "./components/AddTask";
+import EditCompany from "./pages/EditCompany";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/companies/create" element={<AddCompany />} />
           <Route path="/companies" element={<CompanyList />} />
           <Route path="/api/companies/:id" element={<CompanyDetails />} />
+          <Route path="/editcompany/:id" element={<EditCompany />} />
           <Route path="/tasks" element={<AddTask />} />
         </Routes>
       </div>
