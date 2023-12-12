@@ -28,13 +28,16 @@ function Navbar() {
 
       {isLoggedIn ? (
         <>
-          <NavLink to="/companies/create">
-            <button>Create a Company</button>
-          </NavLink>
           <NavLink to="/companies">
             <button>List of Companies</button>
           </NavLink>
           <NavLink to="/tasks">
+            <button>List of Tasks</button>
+          </NavLink>
+          <NavLink to="/companies/create">
+            <button>Create a Company</button>
+          </NavLink>
+          <NavLink to="/tasks/create">
             <button>Add Task</button>
           </NavLink>
           <button onClick={handleLogout} >Log Out</button>

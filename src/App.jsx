@@ -15,6 +15,9 @@ import IsPrivate from "./components/isPrivate";
 import AddTask from "./components/AddTask";
 import EditCompany from "./pages/EditCompany";
 import MyCalendar from "./components/Calendar";
+import TaskList from "./pages/TaskList";
+
+
 function App() {
   return (
     <AuthProviderWrapper>
@@ -28,7 +31,8 @@ function App() {
           <Route path="/companies" element={<CompanyList />} />
           <Route path="/api/companies/:id" element={<CompanyDetails />} />
           <Route path="/editcompany/:id" element={<EditCompany />} />
-          <Route path="/tasks" element={<AddTask />} />
+          <Route path="/tasks" element={<TaskList />} />
+          <Route path="/tasks/create" element={<AddTask />} />
         </Routes>
       </div>
     </AuthProviderWrapper>
