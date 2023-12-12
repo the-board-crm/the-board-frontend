@@ -2,7 +2,6 @@ import { useState } from "react";
 import axios from "axios";
 import { useContext } from "react";
 
-const API_URL = "http://localhost:5005";
 
 function AddCompany(props) {
   const [contactFirstName, setContactFirstName] = useState("");
@@ -28,7 +27,7 @@ function AddCompany(props) {
     const storedToken = localStorage.getItem("authToken");
 
     axios
-      .post(`${API_URL}/api/companies`, requestBody)
+      .post(`${import.meta.env.VITE_API_URL}/api/companies`, requestBody)
       .then((response) => {
         setContactFirstName("");
         setContactLastName("");

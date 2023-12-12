@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import EditCompany from "./EditCompany";
 
-const API_URL = "http://localhost:5005";
+
 
 function CompanyDetails() {
   const [companyDetails, setCompanyDetails] = useState({
@@ -20,7 +20,7 @@ function CompanyDetails() {
 
   useEffect(() => {
     axios
-      .get(API_URL + '/api/companies' + `/${id}`)
+      .get(import.meta.env.VITE_API_URL + '/api/companies' + `/${id}`)
       .then((response) => {
         console.log(response.data);
         setCompanyDetails(response.data);
