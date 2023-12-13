@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-import EditCompany from "./EditCompany";
+import '../css/CompanyDetails.css'
 
 
 
@@ -31,8 +31,8 @@ function CompanyDetails() {
   }, [id]);
 
   return (
-    <div>
-      <div>
+    <div className="container">
+      <div className="company-details">
         <h1>{companyDetails.contactFirstName}</h1>
         <h1>{companyDetails.contactLastName}</h1>
         <p>{companyDetails.companyName}</p>
@@ -41,7 +41,7 @@ function CompanyDetails() {
         <p>Address: {companyDetails.companyAddress}</p>
         <p>Additional Info: {companyDetails.companyDescription}</p>
         <Link to={`/editcompany/${id}`}>
-          <button>Edit and Delete</button>
+          <button className="the-button">Edit and Delete</button>
         </Link>
       </div>
     </div>

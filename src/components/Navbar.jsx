@@ -30,13 +30,11 @@ function Navbar() {
   return (
     <>
     <div className="top-navbar">
-    <input type="text" placeholder="Search..." value={searchInput} onChange={handleSearchChange} />
-    <button onClick={handleSearchSubmit}>Search</button>
-    {isLoggedIn && (
+   {/* <input type="text" placeholder="Search..." value={searchInput} onChange={handleSearchChange} />  ---> hiding until it works
+    <button onClick={handleSearchSubmit}>Search</button> */}
       <div className="user-info">
         <span>Welcome, {user.name}</span>
       </div>
-    )}
     <PomodoroTimer />
       <button onClick={handleLogout} >Log Out</button>
   </div>
