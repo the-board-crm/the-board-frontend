@@ -26,7 +26,7 @@ function TaskList() {
           <p>{task.completed}</p>
           <p>{task.contact}</p>
           <p>{task.createdAt}</p>
-          <Link to={`/api/tasks/${task._id}`}> <button>Task Edit</button></Link>
+          <Link to={`/edittask/${task._id}`}> <button>Task Edit</button></Link>
         </div>
       ))}
     </div>

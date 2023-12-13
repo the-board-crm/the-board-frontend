@@ -50,6 +50,7 @@ function EditTask() {
       .put(import.meta.env.VITE_API_URL + '/api/tasks' + `/${id}`, updatedData)
       .then((response) => {
         console.log("task details updated", response.data);
+        navigate("/tasks");
       })
       .catch((error) => {
         console.error("error updating task details:", error);
@@ -78,7 +79,7 @@ function EditTask() {
         Description:
         <input
           type="text"
-          name="ContactLastName"
+          name="description"
           value={taskDetails.description}
           onChange={(e) =>
             setTaskDetails((prev) => ({
@@ -109,7 +110,7 @@ function EditTask() {
       <label>
         Completed:
         <input
-          type="text"
+          type="checkbox"
           name="completed"
           value={taskDetails.completed}
           onChange={(e) =>
@@ -125,7 +126,7 @@ function EditTask() {
       <label>
         Created at:
         <input
-          type="number"
+          type="text"
           name="createdAt"
           value={taskDetails.createdAt}
           onChange={(e) =>
