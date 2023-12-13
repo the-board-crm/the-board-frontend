@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import '../css/CompanyList.css'
 
 
 function CompanyList() {
@@ -18,17 +19,13 @@ function CompanyList() {
   }, []);
 
   return (
-    <div>
+    <div className="card-container">
       {companies.map((company) => (
-        <div key={company._id}>
+        <div className="card" key={company._id}>
           <h1>{company.contactFirstName}</h1>
-          <p>{company.contactLastName}</p>
-          <p>{company.companyName}</p>
-          <p>{company.companyEmail}</p>
-          <p>{company.companyPhone}</p>
-          <p>{company.companyAddress}</p>
-          <p>{company.companyDescription}</p>
-          <Link to={`/api/companies/${company._id}`}> <button>details</button></Link>
+          <h1>{company.contactLastName}</h1>
+          <h2>{company.companyName}</h2>
+          <Link to={`/api/companies/${company._id}`}> <button>Details</button></Link>
 
         </div>
       ))}

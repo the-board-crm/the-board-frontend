@@ -54,6 +54,7 @@ function EditCompany() {
       .put(import.meta.env.VITE_API_URL + '/api/companies' + `/${id}`, updatedData)
       .then((response) => {
         console.log("company details updated", response.data);
+        navigate("/companies");
       })
       .catch((error) => {
         console.error("error updating company details:", error);

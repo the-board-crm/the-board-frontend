@@ -1,12 +1,14 @@
 import { useState } from "react";
 import axios from "axios";
-
+import { useNavigate } from "react-router-dom";
 
 function AddTask(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [dueDate, setDueDate] = useState("");
   const [completed, setCompleted] = useState(false);
+  const [createdAt, setCreatedAt] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,8 +28,10 @@ function AddTask(props) {
         setDescription("");
         setDueDate("");
         setCompleted("");
+        setCreatedAt("");
+        navigate("/tasks");
 
-        props.onTaskAdded(response.data)
+        props.onTaskAdded(response.data);
         // props.refreshCompany();
       })
       .catch((error) => console.log(error));
@@ -60,10 +64,17 @@ function AddTask(props) {
         />
         <label>Completion:</label>
         <input
-            type="checkbox"
-            name="Completion"
-            checked={completed}
-            onChange={(e) => setCompleted(e.target.checked)}
+          type="checkbox"
+          name="Completion"
+          checked={completed}
+          onChange={(e) => setCompleted(e.target.checked)}
+        />
+        <label>Created At:</label>
+        <input
+          type="date"
+          name="Created at"
+          value={createdAt}
+          onChange={(e) => setCreatedAt(e.target.value)}
         />
         <button type="submit">Submit</button>
       </form>
