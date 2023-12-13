@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, useNavigate, Link } from "react-router-dom";
 import "../css/Navbar.css";
 import { AuthContext } from "../context/auth.context";
-
-
-
-
+import PomodoroTimer from "./PomodoroTimer";
 
 function Navbar() {
-  const { isLoggedIn, logOutUser } = React.useContext(AuthContext);
+  const { isLoggedIn, logOutUser, user } = React.useContext(AuthContext);
+  const [searchInput, setSearchInput] = useState("");
+
+  const handleSearchChange = (event) => 
+  {
+    setSearchInput(event.target.value);
+  }
+
+  const handleSearchSubmit = () => {
+    console.log("Searching for:", searchInput);
+    }
 
   const navigate = useNavigate()
 
@@ -21,6 +28,19 @@ function Navbar() {
   }
 
   return (
+    <>
+    <div className="top-navbar">
+    <input type="text" placeholder="Search..." value={searchInput} onChange={handleSearchChange} />
+    <button onClick={handleSearchSubmit}>Search</button>
+    {isLoggedIn && (
+      <div className="user-info">
+        <span>Welcome, {user.name}</span>
+      </div>
+    )}
+    <PomodoroTimer />
+      <button onClick={handleLogout} >Log Out</button>
+  </div>
+
     <nav className="navbar">
       <NavLink to="/">
         <button>Home</button>
@@ -43,7 +63,6 @@ function Navbar() {
           <NavLink to="/tasks/create">
             <button>Add Task</button>
           </NavLink>
-          <button onClick={handleLogout} >Log Out</button>
         </>
       ) : (
         <>
@@ -56,6 +75,7 @@ function Navbar() {
         </>
       )}
     </nav>
+    </>
   );
 }
 
