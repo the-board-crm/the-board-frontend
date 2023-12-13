@@ -15,7 +15,17 @@ function Navbar() {
 
   const handleSearchSubmit = () => {
     console.log("Searching for:", searchInput);
+    if (searchInput.toLowerCase() === 'calendar') {
+      navigate('/calendar');
+    } else if (searchInput.toLowerCase() === 'companies') {
+      navigate('/companies');
+    } else if (searchInput.toLowerCase() === 'tasks') {
+      navigate('/tasks');
+    } else {
+      navigate("/")
+      console.log("Unknown search:", searchInput);
     }
+  }
 
   const navigate = useNavigate()
 
