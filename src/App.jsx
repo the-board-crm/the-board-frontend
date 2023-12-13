@@ -36,9 +36,8 @@ function App() {
           <Route path="/companies" element={<IsPrivate><CompanyList /></IsPrivate>} />
           <Route path="/api/companies/:id" element={<IsPrivate><CompanyDetails /></IsPrivate>} />
           <Route path="/editcompany/:id" element={<IsPrivate><EditCompany /></IsPrivate>} />
-          <Route path="/calendar" element={<IsPrivate><MyCalendar events={tasks} onAddTask={handleAddTask} /></IsPrivate>}
-          />
-          <Route path="/tasks" element={<IsPrivate><TaskList /></IsPrivate>} />
+          <Route path="/calendar" element={<IsPrivate><MyCalendar events={tasks} onAddTask={handleAddTask} /></IsPrivate>}/>
+          <Route path="/tasks" element={<IsPrivate><TaskList/></IsPrivate>} />
           <Route path="/tasks/create" element={<IsPrivate><AddTask /></IsPrivate>} />
           <Route path="/edittask/:id" element={<IsPrivate><EditTask /></IsPrivate>} />
         </Routes>

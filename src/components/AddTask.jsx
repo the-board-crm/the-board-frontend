@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 
 
-function addTask({selectedDate, onTaskAdded}) {
+function AddTask(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [dueDate, setDueDate] = useState("");
@@ -21,12 +21,13 @@ function addTask({selectedDate, onTaskAdded}) {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
-        onTaskAdded(response.data)
+        console.log("Task added in AddTask:", response.data);
         setTitle("");
         setDescription("");
         setDueDate("");
         setCompleted("");
 
+        props.onTaskAdded(response.data)
         // props.refreshCompany();
       })
       .catch((error) => console.log(error));
@@ -70,4 +71,4 @@ function addTask({selectedDate, onTaskAdded}) {
   );
 }
 
-export default addTask;
+export default AddTask;
