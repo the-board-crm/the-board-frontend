@@ -1,0 +1,41 @@
+.AddCompany {
+    max-width: 400px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+  }
+  
+  .AddCompany h3 {
+    text-align: center;
+    color: #333;
+
+  }
+  
+  .AddCompany form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .AddCompany label {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .AddCompany input,
+  .AddCompany textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .AddCompany button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border-radius: 3px;
+  }
+  
+  .AddCompany button:hover {
+    background-color: #364351;
+  }

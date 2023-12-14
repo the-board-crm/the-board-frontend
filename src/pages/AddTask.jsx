@@ -1,27 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import '../css/AddTask.css'
+import "../css/AddTask.css";
 
-function AddTask(props) {
+function AddTask() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [dueDate, setDueDate] = useState("");
   const [completed, setCompleted] = useState(false);
   const [createdAt, setCreatedAt] = useState("");
-  const [company, setCompany] = useState([])
-  
-  
+  const [company, setCompany] = useState([]);
+  const [companies, setCompanies] = useState([]);
+  const storedToken = localStorage.getItem("authToken");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const { companyId } = props;
-    const requestBody = { title, description, dueDate, completed, companyId };
-
-    const storedToken = localStorage.getItem("authToken");
-
+    const requestBody = {
+      title,
+      description,
+      dueDate,
+      completed,
+      contact: company,
+    };
     axios
       .post(`${import.meta.env.VITE_API_URL}/api/tasks`, requestBody, {
         headers: { Authorization: `Bearer ${storedToken}` },
@@ -35,15 +36,28 @@ function AddTask(props) {
         setCreatedAt("");
         navigate("/tasks");
 
-        props.onTaskAdded(response.data);
+     
         // props.refreshCompany();
       })
       .catch((error) => console.log(error));
   };
 
+  useEffect(() => {
+    axios
+      .get(import.meta.env.VITE_API_URL + "/api/companies", {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .then((response) => {
+        setCompanies(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+  
+
   return (
     <div className="AddTask">
-     
       <form className="task-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Title:</label>
@@ -72,6 +86,16 @@ function AddTask(props) {
             onChange={(e) => setDueDate(e.target.value)}
           />
         </div>
+
+        <div>
+          <label>Choose a company:</label>
+          <select id="company" onChange={(e) => setCompany(e.target.value)}>
+            {companies.map((company) => {
+              return <option value={company._id}>{company.companyName}</option>;
+            })}
+          </select>
+        </div>
+
         <div className="form-group">
           <label>Completion:</label>
           <input
@@ -81,8 +105,7 @@ function AddTask(props) {
             onChange={(e) => setCompleted(e.target.checked)}
           />
         </div>
-        <div  className="form-group">
-       
+        <div className="form-group">
           <label>Created At:</label>
           <input
             type="date"
@@ -91,7 +114,9 @@ function AddTask(props) {
             onChange={(e) => setCreatedAt(e.target.value)}
           />
         </div>
-        <button type="submit" className="submit-button">Submit</button>
+        <button type="submit" className="submit-button">
+          Submit
+        </button>
       </form>
     </div>
   );

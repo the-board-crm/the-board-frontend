@@ -12,7 +12,7 @@ import CompanyList from "./pages/CompanyList";
 import CompanyDetails from "./pages/CompanyDetails";
 import IsAnon from "./components/IsAnon";
 import IsPrivate from "./components/isPrivate";
-import AddTask from "./components/AddTask";
+import AddTask from "./pages/AddTask";
 import EditCompany from "./pages/EditCompany";
 import MyCalendar from "./components/Calendar";
 import TaskList from "./pages/TaskList";
