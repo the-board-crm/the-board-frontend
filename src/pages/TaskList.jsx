@@ -26,7 +26,7 @@ function TaskList() {
           <p>{task.description}</p>
           <p>{task.completed}</p>
 
-          <Link to={`/api/companies/${task.contact._id}`}>{task.contact.companyName}</Link>
+          <Link to={`/api/companies/${task.contact?._id}`}>{task.contact?.companyName}</Link>
           
           <h2>Due date: {task.dueDate.substring(0, 10)}</h2>
           <Link to={`/edittask/${task._id}`}> <button>Task Edit</button></Link>
