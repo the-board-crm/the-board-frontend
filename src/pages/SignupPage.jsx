@@ -20,7 +20,7 @@ function SignupPage(props) {
         e.preventDefault();
        
         const requestBody = {email, password, name:fullName}
-        console.log(requestBody);
+      
         axios.post(`${import.meta.env.VITE_API_URL}/auth/signup`, requestBody)
             .then((response) => {
                 navigate("/");

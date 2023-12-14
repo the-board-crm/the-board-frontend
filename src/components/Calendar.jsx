@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import AddTask from "./AddTask";
+import AddTask from "../pages/AddTask";
 import axios from "axios";
 
 const localizer = momentLocalizer(moment);
@@ -25,7 +25,8 @@ const MyCalendar = ({ onSelectEvent }) => {
     onAddTask(updatedEvents);
     setSelectedDate(null);
   };
-  console.log(tasks);
+
+  
   useEffect(() => {
     axios
       .get(import.meta.env.VITE_API_URL + "/api/tasks")

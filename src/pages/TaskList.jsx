@@ -10,13 +10,17 @@ function TaskList() {
     axios
       .get(import.meta.env.VITE_API_URL + "/api/tasks")
       .then((response) => {
-        setTasks(response.data);
+        setTasks(response.data)
+        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
   const today = new Date().toISOString().split('T')[0]; // Get today's date
+
+
+
 
   const todayTasks = tasks.filter(task => {
     return task.dueDate && task.dueDate.split('T')[0] === today;
@@ -26,13 +30,19 @@ function TaskList() {
       {tasks.map((task) => (
         <div className='task-card' key={task._id}>
           <h1>{task.title}</h1>
+          <p>{task.description}</p>
+          <p>{task.completed}</p>
+
+          <Link to={`/api/companies/${task.contact._id}`}>{task.contact.companyName}</Link>
           
-          <h2>Due date: {task.dueDate}</h2>
+          <h2>Due date: {task.dueDate.substring(0, 10)}</h2>
           <Link to={`/edittask/${task._id}`}> <button>Task Edit</button></Link>
         </div>
       ))}
     </div>
   );
 }
+
+
 
 export default TaskList;

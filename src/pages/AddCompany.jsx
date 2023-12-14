@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import '../css/AddCompany.css'
 
 
 
@@ -27,7 +28,7 @@ function AddCompany(props) {
       companyAddress,
       companyDescription,
     };
-    console.log('Request Body:', requestBody)
+  
     const storedToken = localStorage.getItem("authToken");
 
     axios
@@ -63,35 +64,35 @@ function AddCompany(props) {
           value={contactLastName}
           onChange={(e) => setContactLastName(e.target.value)}
         />
-        <label>Company Name:</label>
+        <label>Company:</label>
         <input
           type="text"
           name="Company Name"
           value={companyName}
           onChange={(e) => setCompanyName(e.target.value)}
         />
-        <label>Company Email:</label>
+        <label>Email:</label>
         <input
           type="text"
           name="Company Email"
           value={companyEmail}
           onChange={(e) => setCompanyEmail(e.target.value)}
         />
-        <label>Company Phone:</label>
+        <label>Phone:</label>
         <input
           type="number"
           name="Company phone"
           value={companyPhone}
           onChange={(e) => setCompanyPhone(e.target.value)}
         />
-        <label>Company Address:</label>
+        <label>Address:</label>
         <input
           type="text"
           name="Company Address"
           value={companyAddress}
           onChange={(e) => setCompanyAddress(e.target.value)}
         />
-        <label>Company Description:</label>
+        <label>Description:</label>
         <textarea
           type="text"
           name="description"

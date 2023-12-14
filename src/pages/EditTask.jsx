@@ -59,7 +59,7 @@ function EditTask() {
   };
 
   return (
-    <div className="EditTask"> 
+    <div className="edit-task"> 
       <label>
         Title:
         <input
