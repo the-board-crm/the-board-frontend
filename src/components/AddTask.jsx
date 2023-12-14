@@ -9,6 +9,9 @@ function AddTask(props) {
   const [dueDate, setDueDate] = useState("");
   const [completed, setCompleted] = useState(false);
   const [createdAt, setCreatedAt] = useState("");
+  const [company, setCompany] = useState([])
+  
+  
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -40,7 +43,7 @@ function AddTask(props) {
 
   return (
     <div className="AddTask">
-      <h3>Add New Task</h3>
+     
       <form className="task-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Title:</label>

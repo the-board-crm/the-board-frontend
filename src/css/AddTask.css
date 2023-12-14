@@ -12,6 +12,8 @@ h3 {
 .task-form {
   display: flex;
   flex-direction: column;
+  margin-top: 10vh;
+ 
 }
 
 .form-group {

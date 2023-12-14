@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import '../css/TaskList.css'
 
 function TaskList() {
   const [tasks, setTasks] = useState([]);
@@ -21,15 +22,12 @@ function TaskList() {
     return task.dueDate && task.dueDate.split('T')[0] === today;
   });
   return (
-    <div>
+    <div className="task-card-container">
       {tasks.map((task) => (
-        <div key={task._id}>
+        <div className='task-card' key={task._id}>
           <h1>{task.title}</h1>
-          <p>{task.description}</p>
-          <p>Due date: {task.dueDate}</p>
-          <p>{task.completed}</p>
-          <p>{task.contact}</p>
-          <p>{task.createdAt}</p>
+          
+          <h2>Due date: {task.dueDate}</h2>
           <Link to={`/edittask/${task._id}`}> <button>Task Edit</button></Link>
         </div>
       ))}
