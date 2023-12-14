@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 
 function AddCompany(props) {
@@ -11,6 +13,8 @@ function AddCompany(props) {
   const [companyPhone, setCompanyPhone] = useState("");
   const [companyAddress, setCompanyAddress] = useState("");
   const [companyDescription, setCompanyDescription] = useState("");
+
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,6 +40,7 @@ function AddCompany(props) {
         setCompanyPhone("");
         setCompanyAddress("");
         setCompanyDescription("");
+        navigate('/companies')
       })
       .catch((error) => console.log(error));
   };

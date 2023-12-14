@@ -40,8 +40,8 @@ function Navbar() {
   return (
     <>
     <div className="top-navbar">
-   {/* <input type="text" placeholder="Search..." value={searchInput} onChange={handleSearchChange} />  ---> hiding until it works
-    <button onClick={handleSearchSubmit}>Search</button> */}
+    <input className="searchbar" type="text" placeholder="Search..." value={searchInput} onChange={handleSearchChange} />  
+    <button className="search-button" onClick={handleSearchSubmit}>Search</button> 
       <div className="user-info">
         <span>Welcome, {user.name}</span>
       </div>
@@ -56,17 +56,17 @@ function Navbar() {
 
       {isLoggedIn ? (
         <>
-          <NavLink to="/companies">
-            <button>List of Companies</button>
-          </NavLink>
           <NavLink to="/calendar">
             <button>Calendar</button>
+          </NavLink>
+          <NavLink to="/companies">
+            <button>List of Companies</button>
           </NavLink>
           <NavLink to="/tasks">
             <button>List of Tasks</button>
           </NavLink>
           <NavLink to="/companies/create">
-            <button>Create a Company</button>
+            <button>Create Company</button>
           </NavLink>
           <NavLink to="/tasks/create">
             <button>Add Task</button>

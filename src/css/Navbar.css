@@ -9,7 +9,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 12vw; 
+  width: 11vw; 
   height: 100vh;
 }
 
@@ -26,5 +26,19 @@
   top: 0;
   left: 0;
   right: 0;
+  height: 7vh;
+}
+.searchbar {
+  width: 75px; /* Adjust the width as needed */
+ 
+}
+
+.search-button {
+
+
+  padding: 8px 15px;
+
+  border-radius: 4px;
+
 }
 

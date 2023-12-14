@@ -33,15 +33,14 @@ function CompanyDetails() {
   return (
     <div className="container">
       <div className="company-details">
-        <h1>{companyDetails.contactFirstName}</h1>
-        <h1>{companyDetails.contactLastName}</h1>
-        <p>{companyDetails.companyName}</p>
+        <h1>{companyDetails.contactFirstName} {companyDetails.contactLastName}</h1>
+        <h2>{companyDetails.companyName}</h2>
         <p>Email: {companyDetails.companyEmail}</p>
         <p>Phone Number: {companyDetails.companyPhone}</p>
         <p>Address: {companyDetails.companyAddress}</p>
         <p>Additional Info: {companyDetails.companyDescription}</p>
         <Link to={`/editcompany/${id}`}>
-          <button className="the-button">Edit and Delete</button>
+          <button className="the-button">Edit or Delete</button>
         </Link>
       </div>
     </div>

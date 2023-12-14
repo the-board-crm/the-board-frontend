@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import '../css/EditTask.css'
 
 function EditTask() {
   const [taskDetails, setTaskDetails] = useState({
@@ -58,7 +59,7 @@ function EditTask() {
   };
 
   return (
-    <div>
+    <div className="EditTask"> 
       <label>
         Title:
         <input
