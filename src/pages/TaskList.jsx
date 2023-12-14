@@ -15,7 +15,11 @@ function TaskList() {
         console.log(error);
       });
   }, []);
+  const today = new Date().toISOString().split('T')[0]; // Get today's date
 
+  const todayTasks = tasks.filter(task => {
+    return task.dueDate && task.dueDate.split('T')[0] === today;
+  });
   return (
     <div>
       {tasks.map((task) => (
