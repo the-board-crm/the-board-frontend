@@ -33,3 +33,29 @@
   font-size: 14px;
   border-radius: 4px;
 }
+
+.homepagetask{
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px;
+  margin-left: 6.5vw;
+  padding: 10px;
+  max-width: 250px;
+  text-align: center;
+}
+.homepagetask h2{
+  font-size: 1.2em;
+}
+.homepagetask h2 {
+  font-size: 1em;
+  color: #eb3a13;
+}
+.homepagetask button {
+  background-color: blue;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 4px;
+}
