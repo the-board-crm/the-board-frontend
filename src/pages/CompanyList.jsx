@@ -24,7 +24,7 @@ function CompanyList() {
         <div className="card" key={company._id}>
           <h3>{company.contactFirstName} {company.contactLastName}</h3>
         <hr></hr>
-          <p>{company.companyName}</p>
+          <h3>{company.companyName}</h3>
           <Link to={`/api/companies/${company._id}`}> <button>Details</button></Link>
 
         </div>
