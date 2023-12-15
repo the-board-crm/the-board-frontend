@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/auth.context";
 import axios from "axios";
+import '../css/Homepage.css'
 
 function HomePage() {
   const { isLoggedIn, user, isLoading } = useContext(AuthContext);
@@ -40,7 +41,12 @@ function HomePage() {
   }
   return (
     <div>
-      <h1>Here is the homepage</h1>
+
+
+
+      <hr />
+      <h1 id="dashboard">Dashboard</h1>
+      <hr />
 
       <div>
         <h2>Great to have you here, {user.name}!</h2>

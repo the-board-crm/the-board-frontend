@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-start;
-  background-color: black;
+  background-color: #393e46   ;
   color: white;
   padding: 10px;
   position: fixed;
@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: black;
+  background-color: #393e46   ;
   color: white;
   padding: 10px;
   margin-left: 12vw;
@@ -29,16 +29,11 @@
   height: 7vh;
 }
 .searchbar {
-  width: 75px; /* Adjust the width as needed */
- 
+  width: 75px;
 }
 
 .search-button {
-
-
   padding: 8px 15px;
-
   border-radius: 4px;
-
 }
 

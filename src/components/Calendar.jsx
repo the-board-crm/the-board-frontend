@@ -4,7 +4,7 @@ import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import AddTask from "../pages/AddTask";
 import axios from "axios";
-
+import '../css/Calendar.css'
 const localizer = momentLocalizer(moment);
 
 const MyCalendar = ({ onSelectEvent }) => {
@@ -39,7 +39,7 @@ const MyCalendar = ({ onSelectEvent }) => {
   }, []);
 
   return (
-    <div>
+    <div id="calendar">
       <Calendar
         localizer={localizer}
         events={tasks}

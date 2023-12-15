@@ -22,7 +22,7 @@ function CompanyList() {
     <div className="card-container">
       {companies.map((company) => (
         <div className="card" key={company._id}>
-          <p>{company.contactFirstName} {company.contactLastName}</p>
+          <h3>{company.contactFirstName} {company.contactLastName}</h3>
         <hr></hr>
           <p>{company.companyName}</p>
           <Link to={`/api/companies/${company._id}`}> <button>Details</button></Link>

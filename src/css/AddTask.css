@@ -34,16 +34,10 @@ textarea {
   border-radius: 3px;
 }
 
-.checkbox-group {
-  display: flex;
-  align-items: center;
-}
-
 .submit-button {
   width: 100%;
   background-color: blue;
   color: white;
   padding: 10px;
-
   border-radius: 3px;
 }
