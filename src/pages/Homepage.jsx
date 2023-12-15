@@ -45,6 +45,7 @@ function HomePage() {
       <div>
         <h2>Great to have you here, {user.name}!</h2>
       </div>
+      <h3>Today's Tasks:</h3>
 {todayTasks.map( (task)=> (
   <div>
     <p>{task.title}</p>
