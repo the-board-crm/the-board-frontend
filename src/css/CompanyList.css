@@ -31,14 +31,6 @@ body {
 }
 
 
-
-.buttons-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-  
-}
-
 .button {
   position: absolute;
   bottom: 10px;

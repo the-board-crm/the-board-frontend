@@ -17,6 +17,7 @@ import EditCompany from "./pages/EditCompany";
 import MyCalendar from "./components/Calendar";
 import TaskList from "./pages/TaskList";
 import EditTask from "./pages/EditTask";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route path="/tasks/create" element={<IsPrivate><AddTask /></IsPrivate>} />
           <Route path="/edittask/:id" element={<IsPrivate><EditTask /></IsPrivate>} />
         </Routes>
+        <Footer />
       </div>
     </AuthProviderWrapper>
   );

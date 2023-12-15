@@ -59,14 +59,13 @@ function HomePage() {
       {todayTasks.map((task) => (
         <div className="homepagetask" key={task._id}>
           <h2>{task.title}</h2>
-          <p>{task.description}</p>
-          <p>{task.completed}</p>
+          <p id="description">{task.description}</p>
+         
           <Link to={`/api/companies/${task.contact?._id}`}>
             {task.contact?.companyName}
           </Link>
-          <h2>Due date: {task.dueDate.substring(0, 10)}</h2>
+          <h2 id="due-date">Due date: {task.dueDate.substring(0, 10)}</h2>
           <Link to={`/edittask/${task._id}`}>
-            {" "}
             <button>Task Edit</button>
           </Link>
         </div>

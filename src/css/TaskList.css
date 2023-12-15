@@ -17,6 +17,7 @@
 
 .task-card h1 {
   font-size: 1.2em;
+  text-decoration: underline;
 }
 
 .task-card h2 {
@@ -38,7 +39,7 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   margin: 10px;
-  margin-left: 6.5vw;
+  margin-left: 2.5vw;
   padding: 10px;
   max-width: 250px;
   text-align: center;
@@ -46,7 +47,7 @@
 .homepagetask h2{
   font-size: 1.2em;
 }
-.homepagetask h2 {
+#due-date {
   font-size: 1em;
   color: #eb3a13;
 }
@@ -58,4 +59,12 @@
   display: inline-block;
   font-size: 14px;
   border-radius: 4px;
+}
+
+#link{
+  color: #ddd;
+}
+
+#description{
+  color: #ddd;
 }
