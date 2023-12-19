@@ -1,8 +1,13 @@
-# React + Vite
+# The Board CRM - Client Side
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Board CRM is a Customer Relationship Management (CRM) tool designed to manage relationships in a business and keep track of tasks. This repository contains the client-side code for The Board CRM.
 
-Currently, two official plugins are available:
+## Server Side
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The server-side code for The Board CRM can be found in the following repository: [The Board CRM - Backend](https://github.com/the-board-crm/the-board-backend)
+
+## Demo
+
+Explore a live demo of The Board CRM by visiting [the-board-crm.netlify.app](https://the-board-crm.netlify.app/). This demo allows you to experience the client-side functionalities of the CRM.
+
+Feel free to use, modify, and contribute to this project to enhance your business relationship management and task tracking capabilities 

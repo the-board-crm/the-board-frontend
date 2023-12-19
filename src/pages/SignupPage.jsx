@@ -75,7 +75,7 @@ function SignupPage(props) {
           {errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
     
           <p>Already have an account?</p>
-          <Link to={"/login"}>Login</Link>
+          <Link to={"/"}>Login</Link>
         </div>
       );
     }

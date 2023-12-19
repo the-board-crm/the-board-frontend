@@ -37,7 +37,7 @@ function LoginPage(props) {
     return(
       <div className="LoginPage">
         <div className="background-image">
-         <p> The Board CRM <br /> Bee creative with Customer Relationship Management </p>
+         <p> The Board CRM <br /> Be creative with our Customer Relationship Management </p>
         </div>
          <div className="login-form">
           <div className="logo"></div>
